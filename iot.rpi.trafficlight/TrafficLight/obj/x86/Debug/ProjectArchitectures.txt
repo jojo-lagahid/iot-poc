@@ -1,0 +1,1 @@
+C:\Dev\GitHub\iot-rpi-trafficlight\iot.rpi.trafficlight\TrafficLight\TrafficLight.csproj;x86

@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="TrafficLight.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TrafficLight"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" RequestedTheme="Light" Width="291.946">
+    <Grid Background="Gray" Margin="0,0,-233,0">
+        <Grid.DataContext>
+            <local:TrafficLightModel/>
+        </Grid.DataContext>
+        <Viewbox HorizontalAlignment="Left" Height="100" Margin="126,56,0,0" VerticalAlignment="Top" Width="100">
+            <Ellipse x:Name="redLight" Width="50" Height="50" Fill="{Binding CarTrafficLight.RedLight.Color}" />
+        </Viewbox>
+        <Viewbox HorizontalAlignment="Left" Height="100" Margin="126,161,0,0" VerticalAlignment="Top" Width="100">
+            <Ellipse x:Name="yellowLight" Fill="{Binding CarTrafficLight.YellowLight.Color, Mode=OneWay}" Height="100" Width="100"/>
+        </Viewbox>
+        <Viewbox HorizontalAlignment="Left" Height="100" Margin="126,266,0,0" VerticalAlignment="Top" Width="100">
+            <Ellipse x:Name="greenLight" Fill="{Binding CarTrafficLight.GreenLight.Color, Mode=OneWay}" Height="100" Width="100" VerticalAlignment="Center"/>
+        </Viewbox>
+        <Button x:Name="ctrlButton" Content="{Binding ToggleButton, Mode=OneWay}" Command="{Binding ChangeStateCommand}" CommandParameter="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.891,-0.437" Margin="148,440,147,168"/>
+
+        <Viewbox HorizontalAlignment="Left" Height="100" Margin="333,56,92,484" VerticalAlignment="Top" Width="100">
+            <Ellipse x:Name="redLight2" Width="50" Height="50" Fill="{Binding PedestrianTrafficLight.RedLight.Color}" />
+        </Viewbox>
+        <Viewbox HorizontalAlignment="Left" Height="100" Margin="333,166,0,0" VerticalAlignment="Top" Width="100">
+            <Ellipse x:Name="greenLight2" Width="50" Height="50" Fill="{Binding PedestrianTrafficLight.GreenLight.Color, Mode=OneWay}" />
+        </Viewbox>
+    </Grid>
+  
+</Page>
